@@ -3,7 +3,7 @@ package com.aplicacion.pm012pp1.Procesos;
 public class Paises
 {
     /*Nombre de la Base de datos */
-    public static final String NameDataBase = "BDEXAMENPM-02";
+    public static final String NameDataBase = "BDEXAMENPM02";
     /* Creacion de tablas de la BB */
     public static final String tablaPais = "pais";
 

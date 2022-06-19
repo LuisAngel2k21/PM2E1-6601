@@ -37,13 +37,13 @@
         android:id="@+id/txtcnombres2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Nombres Del Pais"
         android:inputType="textPersonName"
-        android:text=""
-        android:hint="Nombres"/>
+        android:text="" />
 
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="Numero"
+        android:hint="Codigo del Pais"
         android:inputType="textPersonName"
         android:text="" />
 

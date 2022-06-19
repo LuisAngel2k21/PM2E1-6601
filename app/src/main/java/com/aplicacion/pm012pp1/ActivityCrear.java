@@ -1,17 +1,23 @@
 package com.aplicacion.pm012pp1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,17 +28,24 @@ import com.aplicacion.pm012pp1.Procesos.Transacciones;
 import com.aplicacion.pm012pp1.Procesos.Paises;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ActivityCrear extends AppCompatActivity {
 
-    Button btnagregar,btnagregar2;
+    Button btnagregar,btnagregar2,btnTomarFoto;
     EditText txtnombres, txtedad,txtcomentario;
     SQLiteConexion conexion;
     Spinner comboEmpleado;
     EditText nombres, edad;
 
+
     ArrayList<Empleados> listaempleados;
     ArrayList<String> ArregloEmpleados;
+
+    static final int PETICION_ACCESO_CAM = 100;
+    static final int TAKE_PIC_REQUEST = 101;
 
 
     @Override
@@ -60,6 +73,7 @@ public class ActivityCrear extends AppCompatActivity {
          comboEmpleado =(Spinner) findViewById(R.id.comboPersona);
          btnagregar = (Button) findViewById(R.id.btnagregar);
          btnagregar2 = (Button) findViewById(R.id.btnagregar2);
+
 
 
 
@@ -129,12 +143,19 @@ public class ActivityCrear extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
+
 
 
 
     private void AgregarEmpleado()
     {
+
+
+
         /* Conexion e Inserccion a la base de datos */
         SQLiteConexion conexion = new SQLiteConexion(this, Transacciones.NameDataBase, null, 1);
         SQLiteDatabase db = conexion.getWritableDatabase();
@@ -152,6 +173,7 @@ public class ActivityCrear extends AppCompatActivity {
         db.close();
 
         ClearScreen();
+
     }
 
     private void ClearScreen()
@@ -161,7 +183,6 @@ public class ActivityCrear extends AppCompatActivity {
         txtcomentario.setText("");
 
     }
-
 
 
 
