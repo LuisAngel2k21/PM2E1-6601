@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PM012PP1</string>
+    <string name="texto_buscar">Buscar</string>
+    <string name="texto_eliminar">Eliminar</string>
+    <string name="texto_actualizar">Actualizar</string>
+</resources>
